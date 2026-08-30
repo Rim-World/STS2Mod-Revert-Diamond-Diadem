@@ -1,0 +1,37 @@
+<Project Sdk="Godot.NET.Sdk/4.5.1">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RootNamespace>RevertDiamondDiadem</RootNamespace>
+    <AssemblyName>RevertDiamondDiadem</AssemblyName>
+
+    <!-- 本机路径 -->
+    <Sts2Path>C:/Game/Steam/steamapps/common/Slay the Spire 2</Sts2Path>
+    <Sts2DataDir>$(Sts2Path)/data_sts2_windows_x86_64</Sts2DataDir>
+    <ModsPath>$(Sts2Path)/mods/</ModsPath>
+    <GodotPath>C:/Godot&amp;GDRE/Godot_v4.5.1-stable_mono_win64/Godot_v4.5.1-stable_mono_win64_console.exe</GodotPath>
+
+    <!-- 多平台 MSIL 构建，忽略本地 sts2 平台架构差异警告；CS0436 为 Godot 源生成器 Main 与 sts2.dll 的已知无害冲突 -->
+    <NoWarn>$(NoWarn);MSB3270;CS0436</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup Condition="Exists('$(Sts2DataDir)')">
+    <Reference Include="0Harmony">
+      <HintPath>$(Sts2DataDir)/0Harmony.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="sts2">
+      <HintPath>$(Sts2DataDir)/sts2.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="STS2.RitsuLib" Version="0.5.15" />
+    <!-- 公开化 sts2 程序集：允许访问 protected/private 成员（如 RelicModel.InvokeDisplayAmountChanged/Flash） -->
+    <PackageReference Include="Krafs.Publicizer" Version="2.2.0" PrivateAssets="all" />
+    <Publicize Include="sts2" />
+  </ItemGroup>
+</Project>

@@ -1,1 +1,65 @@
-# STS2Mod-Revert-Diamond-Diadem
+English | [中文](README.zh.md)
+
+# If you like this mod, welcome to check out my other mods. They might be helpful to you.
+
+## 1\. Effects
+
+Reverts the effect of the Ancient relic "Diamond Diadem" from the v0.111 version's "Start combat with 20 Block, and your Block is not removed at the start of your 2nd turn" back to the pre-v0.109 effect: "Whenever you play 2 or fewer cards in a turn, take half damage from enemies" (checked at the end of your turn, with the damage reduction applying during the enemy turn).
+
+This mod works by modifying the original "Diamond Diadem" relic directly, rather than creating a new relic and disabling the old one.
+
+## 2\. Impact (Based on My Understanding of the Game)
+
+Both versions of Diamond Diadem have their own strengths: the post-v0.109 version offers stronger damage mitigation along the way, while the pre-v0.109 version performs much better against the Act 3 bosses.
+
+Overall, however, I find the old Diamond Diadem more interesting in design and more fun to play around, and slightly stronger overall than the new one.
+
+This mod affects save files: while the mod is enabled, the "Diamond Diadem" relic in historical records is displayed with the reverted text; disabling the mod restores the original state.
+
+## 3\. Environment & Version
+
+This mod requires the base library STS2-RitsuLib to be installed first.
+
+This mod supports v0.109.0 and above, applying to the current public beta v0.111; it will not load on the default 0.107.x branch or earlier versions, and will adapt automatically once those branches update.
+
+It disables itself automatically on versions where Diamond Diadem still has the old effect, because the relic on those versions is already the target effect and needs no modification.
+
+When the game starts, the mod inspects how Diamond Diadem is implemented in the game package (whether it uses the combat-start trigger logic, and whether the original dedicated damage-reduction buff is missing); it only takes effect on versions with the new effect. If the relic is removed or its shape changes, the mod disables itself automatically without raising errors or crashing.
+
+In theory, as long as there are no major API updates or relic changes, this mod should automatically adapt to new versions without any modification.
+
+## 4\. Language Support
+
+The relic and buff text provided by this mod covers 16 languages: deu / eng / esp / fra / ind / ita / jpn / kor / pol / ptb / rus / spa / tha / tur / zhs / zht.
+
+13 of these languages match the official v0.107.1 text exactly;
+
+zht (Traditional Chinese) is converted from the zhs (Simplified Chinese) text, since v0.107 did not provide Traditional Chinese;
+
+one word of tha (Thai) falls back to the eng text because the official v0.107 Thai translation does not cover it (this is exactly how the game itself behaves when a text key is missing), while the tha description uses the official v0.107 Thai text;
+
+ind (Indonesian) is not provided by v0.107, so it falls back to the eng text entirely.
+
+## 5\. Implementation & Compatibility
+
+This mod is built on the STS2-RitsuLib framework; the core relic changes are applied through external hard-coded patches: the card-play counting, the end-of-turn check, the application and removal of the damage-reduction buff, the counter UI, and the relic description text are all fixed to the v0.107 behavior.
+
+The damage-reduction buff is a mod-defined class (the official buff class was removed in v0.111), and its name, icon, and text all point to the official v0.107 resources (which were not removed by the developers).
+
+However, compatibility is not guaranteed with pirated copies, modified versions, mobile versions, outdated versions, niche mods, or secondary mods.
+
+## 6\. Credits
+
+This mod was made with ZCode + GLM-5.3-Flash.
+
+I do not recommend this LLM & Agent: I used both official APIs, yet it is both dumber and more expensive than DeepSeek V4 Flash, and it is really so slow. Besides that, it is really poor at English.
+
+Thanks to the Slay the Spire 2 team for their efforts to make modding easier for players.
+
+Thanks to the RitsuLib developer for the open-source framework and documentation.
+
+## 7\. Open-Source Repository & Contact
+
+Open-source repository: https://github.com/Rim-World/STS2Mod-Revert-Diamond-Diadem
+
+Feel free to leave your comments and feedback in the comment section.

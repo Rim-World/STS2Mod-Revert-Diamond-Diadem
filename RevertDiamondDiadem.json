@@ -1,0 +1,14 @@
+{
+  "id": "RevertDiamondDiadem",
+  "name": "回调头冠（RevertDiamondDiadem）",
+  "author": "再玩小卡组找人弄你",
+  "description": "将先古遗物「钻石头冠」（Diamond Diadem）回调至 v0.107 效果：每回合打出不超过 2 张牌时，该回合结束时受到敌人的普通攻击伤害减半，持续到下个敌方回合结束；恢复遗物出牌计数器。需先安装 STS2-RitsuLib；0.109.0 及以上版本可加载，在钻石头冠仍为旧效果的版本上自动停用。",
+  "version": "1.0.0",
+  "has_pck": true,
+  "has_dll": true,
+  "min_game_version": "0.109.0",
+  "dependencies": [
+    { "id": "STS2-RitsuLib", "min_version": "0.5.15", "version": "0.5.15" }
+  ],
+  "affects_gameplay": true
+}
