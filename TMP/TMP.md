@@ -21,6 +21,7 @@
 | 2026-08-28 | `02-缓存与临时/pck-extract/.godot/imported/` | 两个压缩纹理的导入缓存（s3tc / bptc） | ctex | 1.15 MB | pck-tool 提取 |
 | 2026-08-28 | `02-缓存与临时/pck-extract/images/` | 图集条目 `.tres` 与 `diamond_diadem_power.png.import` | 文本 + 配置 | 523 B | pck-tool 提取 |
 | 2026-08-29 | `02-缓存与临时/pck-verify/` | 从打包产物中回抽的 tha 语言表，用于核对入包内容 | JSON | 749 B | pck-tool 提取 |
+| 2026-11-01 | `02-缓存与临时/release-notes-v1.0.0.md` | Release `v1.0.0` 的发布文案（`gh release create --notes-file` 的输入） | Markdown | 3.4 KB | 自写 |
 
 ## 清理建议
 
