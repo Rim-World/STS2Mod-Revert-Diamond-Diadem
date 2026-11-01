@@ -8,7 +8,7 @@
 
 - 仓库整理为 `1.ADR` / `2.PLANS` / `3.DOCS` / `4.SDD` / `5.ChangeLog` / `9.SRC` / `10.OUTPUT` / `PRIVACY` / `TMP` / `TOOLS` 十目录结构，源码整体迁入 `9.SRC/RevertDiamondDiadem/`；
 - 文档按编号与分类重命名，新增总体设计、版本日志、项目 README、本更新日志与各目录索引；
-- 仓库整理提交：`<待回填>`。
+- 仓库整理提交：`8dc2105`。
 
 ## [1.0.0] - 2026-11-01
 
