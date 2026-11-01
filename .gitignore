@@ -1,21 +1,38 @@
-# Godot 4+ specific ignores
-.godot/
-.nomedia
+# ── 构建产物（.NET / Godot C#）──
+bin/
+obj/
+*.dll
+*.pck
+*.pdb
+*.user
+*.suo
 
-# Godot-specific ignores
+# ── Godot 4 ──
+.godot/
 .import/
 export.cfg
 export_credentials.cfg
-*.tmp
-
-# Imported translations (automatically generated from CSV files)
 *.translation
-
-# Mono-specific ignores
+*.tmp
 .mono/
 data_*/
 mono_crash.*.json
+.nomedia
 
-# .NET build artifacts
-bin/
-obj/
+# ── 本地运行环境（不入库）──
+10.OUTPUT/*
+!10.OUTPUT/output.md
+TMP/*
+!TMP/TMP.md
+PRIVACY/
+
+# ── 发布包 / 压缩件 ──
+*.zip
+*.7z
+
+# ── 系统与编辑器 ──
+.DS_Store
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
