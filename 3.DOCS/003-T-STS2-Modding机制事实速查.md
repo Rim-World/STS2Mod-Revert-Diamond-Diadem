@@ -5,7 +5,7 @@
 
 ## 一、加载链（已实证）
 
-1. manifest `mods/<ModId>/<ModId>.json` 字段全集：id/name/author/description/version/has_pck/has_dll/min_game_version/dependencies/affects_gameplay —— 反编译定义 `C:/Users/13167/Desktop/Mod/STS2-Reference/decompiled-111/MegaCrit.Sts2.Core.Modding/ModManifest.cs`。
+1. manifest `mods/<ModId>/<ModId>.json` 字段全集：id/name/author/description/version/has_pck/has_dll/min_game_version/dependencies/affects_gameplay —— 反编译定义 `C:/Users/<用户名>/Desktop/Mod/STS2-Reference/decompiled-111/MegaCrit.Sts2.Core.Modding/ModManifest.cs`。
 2. 入口约定：`[ModInitializer("方法名")]` 标注静态类方法；若无该特性则自动 `Harmony.PatchAll(mod 程序集)`。注释原文见 `decompiled-111/MegaCrit.Sts2.Core.Modding/ModInitializerAttribute.cs`。
 3. Harmony 运行库由游戏本体携带：`C:/Game/Steam/steamapps/common/Slay the Spire 2/data_sts2_windows_x86_64/0Harmony.dll` → csproj 以 `Private=false` 引用、不随包分发。
 4. 本地化按约定探测：`ModManager.GetModdedLocTables(language, file)` 逐个 loaded mod 检查 `res://{manifest.id}/localization/{language}/{file}` 是否存在（`decompiled-111/MegaCrit.Sts2.Core.Modding/ModManager.cs:966`）。三字符语言码作目录名；缺失语言目录=该语言不加载该表；缺键会抛 LocException。
@@ -56,7 +56,7 @@ public static Type[] AllAbstractModelSubtypes
 
 产物 4 文件入 `mods/<ModId>/`：`<ModId>.dll`、`<ModId>.pck`、`<ModId>.json`、（可选）`.pdb`。
 
-build.ps1 三步流水线（模板：`C:/Users/13167/Desktop/Mod/STS2Mod-回调同步/src/RevertSynchronize/build.ps1`）：
+build.ps1 三步流水线（模板：`C:/Users/<用户名>/Desktop/Mod/STS2Mod-回调同步/src/RevertSynchronize/build.ps1`）：
 
 ```powershell
 dotnet build <ModId>.csproj -c Debug

@@ -17,7 +17,7 @@ import json
 import sys
 from pathlib import Path
 
-SRC_ROOT = Path(r"C:/Users/13167/Desktop/Mod/STS2-Reference/1.STS2-107Reference/localization")
+SRC_ROOT = Path(r"C:/Users/<用户名>/Desktop/Mod/STS2-Reference/1.STS2-107Reference/localization")
 OUT_ROOT = Path(__file__).resolve().parent.parent / "src/RevertDiamondDiadem/RevertDiamondDiadem/localization"
 
 LANGS = ["deu", "eng", "esp", "fra", "ind", "ita", "jpn", "kor",

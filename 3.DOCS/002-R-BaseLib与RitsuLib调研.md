@@ -1,10 +1,10 @@
 # 第三方基础库调研：BaseLib-StS2 与 STS2-RitsuLib
 
 > 调研日期：2026-08-27。远程数据（GitHub/Steam/NuGet API）为当日实时抓取；源码细节来自本地副本只读阅读：
-> - `C:/Users/13167/Desktop/Mod/STS2-Reference/BaseLib-StS2/`（快照 v3.4.0，上游已到 v3.4.5）
-> - `C:/Users/13167/Desktop/Mod/STS2-Reference/STS2-RitsuLib/`（快照 v0.5.10，上游已到 v0.5.15）
+> - `C:/Users/<用户名>/Desktop/Mod/STS2-Reference/BaseLib-StS2/`（快照 v3.4.0，上游已到 v3.4.5）
+> - `C:/Users/<用户名>/Desktop/Mod/STS2-Reference/STS2-RitsuLib/`（快照 v0.5.10，上游已到 v0.5.15）
 >
-> 另可参照同目录既有的两份早期调研（达弗修改项目产出）：`C:/Users/13167/Desktop/Mod/STS2Mod-达弗修改/research/baselib-research.md`、`research/ritsulib-research.md`。
+> 另可参照同目录既有的两份早期调研（达弗修改项目产出）：`C:/Users/<用户名>/Desktop/Mod/STS2Mod-达弗修改/research/baselib-research.md`、`research/ritsulib-research.md`。
 
 ## 一、BaseLib
 
@@ -34,7 +34,7 @@
 
 - 游戏原生支持 mod：manifest JSON 字段全集定义于反编译 `MegaCrit.Sts2.Core.Modding/ModManifest.cs`；`[ModInitializer]` 无标注则自动 `Harmony.PatchAll`；Harmony 运行库随本体分发（`data_sts2_windows_x86_64/0Harmony.dll`）。
 - 官方构建底座是 Mega Crit 定制版 Godot「MegaDot」(<https://megadot.megacrit.com/>)；分发主渠道是 Steam Workshop；官方上传器 megacrit/sts2-mod-uploader（90 stars）。
-- 本机已有上传器源码副本：`C:/Users/13167/Desktop/Mod/STS2-Reference/sts2-mod-uploader/`。
+- 本机已有上传器源码副本：`C:/Users/<用户名>/Desktop/Mod/STS2-Reference/sts2-mod-uploader/`。
 - NuGet 上以引用程序集/公共化为代表的第三方生态（MinionLib 双适配包、Publicizer 参考包等）印证“官方路线之上的标准件”定位。提示词里的 “Thunderspire” 未能在 GitHub/NuGet/域名中验证存在，当前可验证主渠道仅 Steam Workshop + GitHub Releases/NuGet。
 
 ## 四、依赖 vs 不依赖：利弊要素表
